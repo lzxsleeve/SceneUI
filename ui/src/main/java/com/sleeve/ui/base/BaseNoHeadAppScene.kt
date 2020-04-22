@@ -2,20 +2,21 @@ package com.sleeve.ui.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
-import com.bytedance.scene.ui.template.SwipeBackGroupScene
+import com.bytedance.scene.ui.template.AppCompatScene
 import com.sleeve.ui.R
 
 /**
  * 无头部的 Scene
- * @exception SwipeBackGroupScene
+ * @exception AppCompatScene
  *
- * Create by lzx on 2020/4/22.
+ * Create by lzx on 2020/4/21.
  */
-abstract class BaseNoHeadScene : BaseScene() {
+abstract class BaseNoHeadAppScene : BaseAppScene() {
 
-    override fun onCreateSwipeContentView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?): ViewGroup {
+    override fun onCreateContentView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?): View? {
         // 显示内容的根布局
         mViewGroup = inflater.inflate(R.layout.base_uif, container, false) as FrameLayout
         // 添加内容布局
@@ -25,6 +26,7 @@ abstract class BaseNoHeadScene : BaseScene() {
         }
 
         // 需要支持SwipeBack则这里必须调用toSwipeBackFragment(view);
-        return mViewGroup!!
+        return mViewGroup
     }
+
 }

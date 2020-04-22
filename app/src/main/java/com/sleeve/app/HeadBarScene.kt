@@ -1,16 +1,15 @@
 package com.sleeve.app
 
 import android.widget.TextView
-import com.sleeve.ui.base.BaseHeadBarAppScene
+import com.sleeve.ui.base.BaseHeadBarScene
 import com.sleeve.ui.view.HeadBar
 
 /**
  * 说明
  *
- *
  * Create by Sleeve on 2020/1/14
  */
-class HeadBarScene : BaseHeadBarAppScene() {
+class HeadBarScene : BaseHeadBarScene() {
     private var textView: TextView? = null
     override fun initHeadBar(headBar: HeadBar) {
         headBar.setTitle("标题")

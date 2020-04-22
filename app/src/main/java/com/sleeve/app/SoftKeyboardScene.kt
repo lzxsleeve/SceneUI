@@ -7,7 +7,7 @@ import com.sleeve.ui.view.HeadBar
  * 说明
  *
  *
- * Create by lzx on 2020/4/21 0021.
+ * Create by lzx on 2020/4/21.
  */
 class SoftKeyboardScene : BaseHeadBarAppScene() {
     override fun initHeadBar(headBar: HeadBar) {

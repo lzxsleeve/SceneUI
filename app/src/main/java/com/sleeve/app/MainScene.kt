@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import com.sleeve.ui.base.BaseHeadBarAppScene
+import com.sleeve.ui.base.BaseHeadBarScene
 import com.sleeve.ui.view.HeadBar
 
 /**
@@ -30,7 +31,6 @@ class MainScene : BaseHeadBarAppScene(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.home_btn1 -> {
-//                start(HeadBarScene::class.java)
                 val scene = HeadBarScene()
                 val bundle = Bundle()
                 bundle.putString("text", "Hello, 你好啊")

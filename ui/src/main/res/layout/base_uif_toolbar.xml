@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <com.bytedance.scene.ui.view.StatusBarView
-        android:id="@+id/bar_view"
+        android:id="@+id/status_bar_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="gone" />
