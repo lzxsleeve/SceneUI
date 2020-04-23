@@ -63,31 +63,23 @@ abstract class BaseScene : SwipeBackGroupScene() {
         requireNavigationScene().push(scene)
     }
 
-    fun start(scene: Scene, bundle: Bundle) {
-        scene.setArguments(bundle)
-        start(scene)
-    }
-
-    fun start(scene: Scene, bundle: Bundle?, option: PushOptions) {
-        if (bundle != null) {
-            scene.setArguments(bundle)
-        }
+    fun start(scene: Scene, option: PushOptions) {
         requireNavigationScene().push(scene, option)
     }
 
     /**
      * 跳转并弹出当前页面
      */
-    fun startWithPop(scene: Scene, bundle: Bundle? = null) {
-        start(scene, bundle, PushOptions.Builder().clearCurrent().build())
+    fun startWithPop(scene: Scene) {
+        start(scene, PushOptions.Builder().clearCurrent().build())
     }
 
     /**
      * 跳转页面并设置返回结果监听
      */
-    fun startResultCallback(scene: Scene, resultCallback: PushResultCallback, bundle: Bundle? = null) {
-        val options = PushOptions.Builder().setPushResultCallback(resultCallback).build()
-        start(scene, bundle, options)
+    fun startResultCallback(scene: Scene, resultCallback: PushResultCallback, builder: PushOptions.Builder = PushOptions.Builder()) {
+        val options = builder.setPushResultCallback(resultCallback).build()
+        start(scene, options)
     }
 
 

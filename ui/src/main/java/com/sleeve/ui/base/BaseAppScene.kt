@@ -9,6 +9,7 @@ import com.bytedance.scene.Scene
 import com.bytedance.scene.animation.NavigationAnimationExecutor
 import com.bytedance.scene.animation.animatorexecutor.HorizontalTransitionAnimatorExecutor
 import com.bytedance.scene.interfaces.PushOptions
+import com.bytedance.scene.interfaces.PushResultCallback
 import com.bytedance.scene.ui.template.AppCompatScene
 import com.sleeve.ui.view.HeadBar
 
@@ -73,15 +74,22 @@ abstract class BaseAppScene : AppCompatScene() {
         requireNavigationScene().push(scene)
     }
 
-    fun start(scene: Scene, bundle: Bundle) {
-        scene.setArguments(bundle)
-        requireNavigationScene().push(scene)
+    fun start(scene: Scene, option: PushOptions) {
+        requireNavigationScene().push(scene, option)
     }
 
-    fun start(scene: Scene, bundle: Bundle?, option: PushOptions) {
-        if (bundle != null) {
-            scene.setArguments(bundle)
-        }
-        requireNavigationScene().push(scene, option)
+    /**
+     * 跳转并弹出当前页面
+     */
+    fun startWithPop(scene: Scene) {
+        start(scene, PushOptions.Builder().clearCurrent().build())
+    }
+
+    /**
+     * 跳转页面并设置返回结果监听
+     */
+    fun startResultCallback(scene: Scene, resultCallback: PushResultCallback, builder: PushOptions.Builder = PushOptions.Builder()) {
+        val options = builder.setPushResultCallback(resultCallback).build()
+        start(scene, options)
     }
 }

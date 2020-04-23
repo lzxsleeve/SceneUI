@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dialog_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="#000000">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:background="@drawable/white_round"
+        android:elevation="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.75"
+        tools:targetApi="lollipop">
+
+        <TextView
+            android:id="@+id/dialog_title"
+            style="@style/text16"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="我是标题" />
+
+        <View
+            android:id="@+id/textView4"
+            style="@style/line_horizontal"
+            android:layout_width="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dialog_title" />
+
+        <TextView
+            android:id="@+id/dialog_content"
+            style="@style/text16"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="3dp"
+            android:minHeight="64dp"
+            android:padding="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            tools:text="我是中间的文本" />
+
+        <View
+            android:id="@+id/textView6"
+            style="@style/line_horizontal"
+            android:layout_width="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dialog_content"
+            app:layout_goneMarginTop="0dp" />
+
+        <TextView
+            android:id="@+id/dialog_cancel"
+            style="@style/text16"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/text999"
+            app:layout_constraintEnd_toStartOf="@+id/textView9"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+        <View
+            android:id="@+id/textView9"
+            style="@style/line_vertical"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/dialog_cancel"
+            app:layout_constraintEnd_toStartOf="@+id/dialog_ok"
+            app:layout_constraintStart_toEndOf="@+id/dialog_cancel"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+        <TextView
+            android:id="@+id/dialog_ok"
+            style="@style/text16"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@color/theme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView9"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
