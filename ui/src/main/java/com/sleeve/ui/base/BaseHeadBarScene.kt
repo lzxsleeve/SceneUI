@@ -32,6 +32,7 @@ abstract class BaseHeadBarScene : BaseScene() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        // 显示状态栏
         view.status_bar_view.visibility = View.VISIBLE
     }
 

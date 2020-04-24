@@ -28,7 +28,25 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp"
-        android:text="FragmentDialog"
+        android:text="DialogFragment"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/dialog_btn4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:text="输入框位置偏下时 SceneDialog"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/dialog_btn5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:text="输入框位置偏下时 DialogFragment"
         android:textAllCaps="false" />
 
 </LinearLayout>

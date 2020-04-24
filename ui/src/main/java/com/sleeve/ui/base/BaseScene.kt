@@ -7,6 +7,7 @@ import androidx.annotation.IdRes
 import androidx.annotation.LayoutRes
 import com.bytedance.scene.Scene
 import com.bytedance.scene.animation.NavigationAnimationExecutor
+import com.bytedance.scene.animation.animatorexecutor.DialogSceneAnimatorExecutor
 import com.bytedance.scene.animation.animatorexecutor.HorizontalTransitionAnimatorExecutor
 import com.bytedance.scene.interfaces.PushOptions
 import com.bytedance.scene.interfaces.PushResultCallback
@@ -90,5 +91,15 @@ abstract class BaseScene : SwipeBackGroupScene() {
         start(scene, options)
     }
 
+    /**
+     * 显示弹窗
+     */
+    fun showSceneDialog(scene: Scene, bundle: Bundle? = null) {
+        if (bundle != null) {
+            scene.setArguments(bundle)
+        }
+        val option = PushOptions.Builder().setTranslucent(true).setAnimation(DialogSceneAnimatorExecutor()).build()
+        requireNavigationScene().push(scene, option)
+    }
 
 }

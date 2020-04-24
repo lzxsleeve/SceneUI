@@ -17,19 +17,20 @@ import kotlinx.android.synthetic.main.base_uif.view.*
 abstract class BaseNoHeadScene : BaseScene() {
 
     override fun onCreateSwipeContentView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?): ViewGroup {
-        val viewGroup = inflater.inflate(R.layout.base_uif, container, false) as ViewGroup
+        val layoutParent = inflater.inflate(R.layout.base_uif, container, false) as ViewGroup
         // 显示内容的根布局
-        mViewGroup = viewGroup.findViewById(R.id.frame_layout)
+        mViewGroup = layoutParent.findViewById(R.id.frame_layout)
         // 添加内容布局
         val contentLayout = getContentLayout()
         if (contentLayout != 0) {
             inflater.inflate(contentLayout, mViewGroup, true)
         }
-        return viewGroup
+        return layoutParent
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        // 显示状态栏
         view.status_bar_view.visibility = View.VISIBLE
     }
 }

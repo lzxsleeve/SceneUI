@@ -16,15 +16,15 @@ import com.sleeve.ui.R
 abstract class BaseNoHeadAppScene : BaseAppScene() {
 
     override fun onCreateContentView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?): View? {
-        val viewGroup = inflater.inflate(R.layout.base_uif, container, false) as ViewGroup
+        val layoutParent = inflater.inflate(R.layout.base_uif, container, false) as ViewGroup
         // 显示内容的根布局
-        mViewGroup = viewGroup.findViewById(R.id.frame_layout)
+        mViewGroup = layoutParent.findViewById(R.id.frame_layout)
         // 添加内容布局
         val contentLayout = getContentLayout()
         if (contentLayout != 0) {
             inflater.inflate(contentLayout, mViewGroup, true)
         }
-        return viewGroup
+        return layoutParent
     }
 
 }

@@ -1,5 +1,6 @@
 package com.sleeve.app.dialog
 
+import android.graphics.Color
 import android.view.View
 import com.sleeve.app.R
 import com.sleeve.ui.dialog.BaseSceneDialog
@@ -20,11 +21,12 @@ class TipDialog : BaseSceneDialog(), View.OnClickListener {
         view.dialog_title.text = "标题"
         view.dialog_cancel.setOnClickListener(this)
         view.dialog_ok.setOnClickListener(this)
-        val background = view.dialog_background
-        background.setOnClickListener(this)
+        view.dialog_background.setOnClickListener(this)
         arguments?.let {
-            background.setBackgroundColor(it.getInt("color"))
             view.dialog_content.text = it.getString("content")
+            if (!it.getBoolean("isDark")) {
+                setBackgroundColor(Color.TRANSPARENT)
+            }
         }
     }
 

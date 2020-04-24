@@ -19,7 +19,7 @@ abstract class BaseHeadBarAppScene : BaseAppScene() {
     protected var mHeadBar: HeadBar? = null
 
     override fun onCreateContentView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?): View {
-        val layoutParent = inflater.inflate(R.layout.base_uif_toolbar, container, false) as ViewGroup // 设置头部
+        val layoutParent = inflater.inflate(R.layout.base_uif_toolbar, container, false) as ViewGroup
         setToolbar(layoutParent)
         mViewGroup = layoutParent.findViewById(R.id.frame_layout)
         val contentLayout = getContentLayout()
@@ -29,6 +29,9 @@ abstract class BaseHeadBarAppScene : BaseAppScene() {
         return layoutParent
     }
 
+    /**
+     * 设置头部
+     */
     private fun setToolbar(layoutParent: View) {
         mHeadBar = layoutParent.findViewById(R.id.head_bar)
         initHeadBar(mHeadBar!!)
