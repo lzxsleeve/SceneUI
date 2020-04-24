@@ -6,18 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import android.widget.ScrollView
 import androidx.annotation.IdRes
 import com.bytedance.scene.Scene
+import com.sleeve.ui.R
 
 /**
  * 弹窗基类
  * 优点：轻量、没有FragmentDialog的内存泄漏，在没有特殊需求时推荐使用
- * 缺点：动画自定义不方便,弹窗与输入法模式会有兼容问题,但问题不会很大,根布局需要设置android:fitsSystemWindows
- * 出现不方便处理的情况时，推荐使用DialogFragment
+ * 缺点：动画自定义不方便,弹窗与输入法模式会有兼容问题,需要在根布局设置android:fitsSystemWindows="true"
  *
  * Create by lzx on 2020/4/23.
  */
-abstract class BaseSceneDialog : Scene() {
+abstract class BaseDialogScene : Scene() {
 
     /**
      * 显示内容的根布局
@@ -26,7 +27,10 @@ abstract class BaseSceneDialog : Scene() {
     protected var mParentView: FrameLayout? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?): View {
-        mParentView = FrameLayout(requireSceneContext())
+        // mParentView = FrameLayout(requireSceneContext())
+        // ScrollView可以修复布局超出时上面部分被截取的问题
+        mParentView = inflater.inflate(R.layout.scroll_view, null) as ScrollView
+
         mViewGroup = inflater.inflate(getContentLayout(), null)
         mParentView!!.addView(mViewGroup!!)
         // 设置默认layoutParams
@@ -34,6 +38,8 @@ abstract class BaseSceneDialog : Scene() {
         layoutParams.gravity = Gravity.CENTER
         setLayoutParams(layoutParams)
 
+        // 设置mViewGroup无事件的点击事件，不设置的话点击会透传到mParentView
+        mViewGroup?.setOnClickListener {}
         setCanceledOnTouchOutside(true)
         setBackgroundColor(0xaa000000.toInt())
         return mParentView!!

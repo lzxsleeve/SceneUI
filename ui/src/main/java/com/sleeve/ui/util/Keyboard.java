@@ -8,7 +8,7 @@ import java.lang.reflect.Field;
 
 /**
  * 软键盘相关
- *
+ * <p>
  * Create by lzx on date 2019/7/12.
  */
 
@@ -46,6 +46,17 @@ public class Keyboard {
             } catch (NoSuchFieldException | IllegalAccessException e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    /**
+     * 隐藏软键盘
+     */
+    public static void HideKeyboard(View v) {
+        InputMethodManager imm = (InputMethodManager) v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        assert imm != null;
+        if (imm.isActive()) {
+            imm.hideSoftInputFromWindow(v.getApplicationWindowToken(), 0);
         }
     }
 }

@@ -2,9 +2,12 @@ package com.sleeve.app
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
+import com.bytedance.scene.navigation.OnBackPressedListener
 import com.sleeve.ui.base.BaseHeadBarAppScene
 import com.sleeve.ui.view.HeadBar
 import kotlinx.android.synthetic.main.scene_main.view.*
+import java.util.concurrent.TimeUnit
 
 /**
  * 首页
@@ -22,6 +25,22 @@ class MainScene : BaseHeadBarAppScene(), View.OnClickListener {
     }
 
     override fun initView() {
+
+        // 拦截返回键
+        requireNavigationScene().addOnBackPressedListener(this, object : OnBackPressedListener {
+
+            private var time: Long = 0
+
+            override fun onBackPressed(): Boolean {
+                if (time == 0L || TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis() - time) > 2) {
+                    Toast.makeText(requireSceneContext(), "再次点击退出应用", Toast.LENGTH_SHORT).show()
+                    time = System.currentTimeMillis()
+                    return true
+                }
+                return false
+            }
+        })
+
         view.home_btn1.setOnClickListener(this)
         view.home_btn2.setOnClickListener(this)
         view.home_btn3.setOnClickListener(this)

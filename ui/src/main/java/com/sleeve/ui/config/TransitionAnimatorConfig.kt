@@ -10,6 +10,7 @@ import com.bytedance.scene.interfaces.PushOptions
  *
  * Create by Sleeve on 2020/1/22
  */
+@Deprecated("配置全局页面动画设置，现在并没有使用")
 object TransitionAnimatorConfig {
     private var popOptions: PopOptions
     private var pushOptions: PushOptions
