@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp"
-        android:text="有头部的Scene" />
+        android:text="无头部的Scene" />
 
     <Button
         android:id="@+id/home_btn2"
@@ -18,10 +18,18 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp"
-        android:text="输入法测试" />
+        android:text="有头部的Scene" />
 
     <Button
         android:id="@+id/home_btn3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:text="输入法测试" />
+
+    <Button
+        android:id="@+id/home_btn4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"

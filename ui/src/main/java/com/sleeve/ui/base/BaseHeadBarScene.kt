@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import com.bytedance.scene.ui.template.SwipeBackGroupScene
 import com.sleeve.ui.R
 import com.sleeve.ui.view.HeadBar
+import kotlinx.android.synthetic.main.base_uif_toolbar.view.*
 
 /**
  * 具有头部的 Scene -- 可以右滑关闭
@@ -31,7 +32,7 @@ abstract class BaseHeadBarScene : BaseScene() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        findViewById<View>(R.id.status_bar_view)?.visibility = View.VISIBLE
+        view.status_bar_view.visibility = View.VISIBLE
     }
 
     /**

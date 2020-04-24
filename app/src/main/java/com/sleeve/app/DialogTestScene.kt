@@ -9,6 +9,7 @@ import com.sleeve.app.dialog.TipDialog
 import com.sleeve.app.dialog.TipFragmentDialog
 import com.sleeve.ui.base.BaseHeadBarScene
 import com.sleeve.ui.view.HeadBar
+import kotlinx.android.synthetic.main.scene_dialog_test.view.*
 
 /**
  * 弹窗测试
@@ -25,16 +26,16 @@ class DialogTestScene : BaseHeadBarScene(), View.OnClickListener {
     }
 
     override fun initView() {
-        findViewId<View>(R.id.dialog_btn1).setOnClickListener(this)
-        findViewId<View>(R.id.dialog_btn2).setOnClickListener(this)
-        findViewId<View>(R.id.dialog_btn3).setOnClickListener(this)
+        view.dialog_btn1.setOnClickListener(this)
+        view.dialog_btn2.setOnClickListener(this)
+        view.dialog_btn3.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
         when (v.id) {
             R.id.dialog_btn1 -> {
                 val bundle = Bundle()
-                bundle.putString("content","我是无背景的Scene弹窗")
+                bundle.putString("content", "我是无背景的Scene弹窗")
 
                 requireNavigationScene().push(
                     TipDialog::class.java, bundle, PushOptions.Builder()
@@ -43,8 +44,8 @@ class DialogTestScene : BaseHeadBarScene(), View.OnClickListener {
             }
             R.id.dialog_btn2 -> {
                 val bundle = Bundle()
-                bundle.putInt("color", 0xaa000000.toInt())
-                bundle.putString("content","我是有背景的Scene弹窗")
+                bundle.putInt("color", 0x99000000.toInt())
+                bundle.putString("content", "我是有背景的Scene弹窗")
 
                 val tipDialog = TipDialog()
                 tipDialog.setArguments(bundle)

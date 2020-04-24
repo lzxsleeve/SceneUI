@@ -13,7 +13,7 @@ import com.bytedance.scene.interfaces.PushResultCallback
 import com.bytedance.scene.ui.template.SwipeBackGroupScene
 
 /**
- * SwipeBackGroupScene 封装通用方法的基类
+ * SwipeBackGroupScene 封装通用方法的基类, 默认可以右滑关闭
  * 注：软键盘适配会存在一些不方便使用的地方，比如adjustResize需要要搭配android:fitsSystemWindows使用，但是会增加一个状态栏高度的空白区域，这时推荐使用BaseHeadBarAppScene
  *
  * Create by lzx on 2020/4/21.
@@ -60,11 +60,19 @@ abstract class BaseScene : SwipeBackGroupScene() {
     }
 
     fun start(scene: Scene) {
-        requireNavigationScene().push(scene)
+        start(scene, PushOptions.Builder().build())
     }
 
     fun start(scene: Scene, option: PushOptions) {
         requireNavigationScene().push(scene, option)
+    }
+
+    /**
+     * 使用class进行跳转
+     * ps:使用ReuseGroupScene时必须使用class跳转，其他时候并无太大区别
+     */
+    fun start(clazz: Class<out Scene?>, argument: Bundle? = null, pushOptions: PushOptions = PushOptions.Builder().build()) {
+        requireNavigationScene().push(clazz, argument, pushOptions)
     }
 
     /**

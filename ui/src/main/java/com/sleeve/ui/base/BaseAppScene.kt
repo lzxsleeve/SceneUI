@@ -14,7 +14,7 @@ import com.bytedance.scene.ui.template.AppCompatScene
 import com.sleeve.ui.view.HeadBar
 
 /**
- * AppCompatScene 封装通用方法的基类
+ * AppCompatScene 封装通用方法的基类, 默认禁止右滑关闭
  * 注：非特殊情况，如软键盘适配问题时，推荐使用BaseScene
  *
  * Create by lzx on 2020/4/21.
@@ -35,11 +35,6 @@ abstract class BaseAppScene : AppCompatScene() {
         setNavigationAnim(HorizontalTransitionAnimatorExecutor())
         initView()
     }
-
-    /**
-     * 设置标题
-     */
-    protected abstract fun initHeadBar(headBar: HeadBar)
 
     @LayoutRes
     protected abstract fun getContentLayout(): Int
@@ -71,11 +66,19 @@ abstract class BaseAppScene : AppCompatScene() {
     }
 
     fun start(scene: Scene) {
-        requireNavigationScene().push(scene)
+        start(scene, PushOptions.Builder().build())
     }
 
     fun start(scene: Scene, option: PushOptions) {
         requireNavigationScene().push(scene, option)
+    }
+
+    /**
+     * 使用class进行跳转
+     * ps:使用ReuseGroupScene时必须使用class跳转，其他时候并无太大区别
+     */
+    fun start(clazz: Class<out Scene?>, argument: Bundle? = null, pushOptions: PushOptions = PushOptions.Builder().build()) {
+        requireNavigationScene().push(clazz, argument, pushOptions)
     }
 
     /**

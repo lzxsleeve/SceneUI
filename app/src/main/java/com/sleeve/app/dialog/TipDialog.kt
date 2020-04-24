@@ -1,9 +1,9 @@
 package com.sleeve.app.dialog
 
 import android.view.View
-import android.widget.TextView
 import com.sleeve.app.R
 import com.sleeve.ui.dialog.BaseSceneDialog
+import kotlinx.android.synthetic.main.dialog_tip.view.*
 
 /**
  * 说明
@@ -17,14 +17,14 @@ class TipDialog : BaseSceneDialog(), View.OnClickListener {
     }
 
     override fun initView() {
-        findViewId<TextView>(R.id.dialog_title).text = "标题"
-        findViewId<View>(R.id.dialog_cancel).setOnClickListener(this)
-        findViewId<View>(R.id.dialog_ok).setOnClickListener(this)
-        val background = findViewId<View>(R.id.dialog_background)
+        view.dialog_title.text = "标题"
+        view.dialog_cancel.setOnClickListener(this)
+        view.dialog_ok.setOnClickListener(this)
+        val background = view.dialog_background
         background.setOnClickListener(this)
         arguments?.let {
             background.setBackgroundColor(it.getInt("color"))
-            findViewId<TextView>(R.id.dialog_content).text = it.getString("content")
+            view.dialog_content.text = it.getString("content")
         }
     }
 

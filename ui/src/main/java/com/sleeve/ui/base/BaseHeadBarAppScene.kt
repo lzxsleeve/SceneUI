@@ -36,6 +36,11 @@ abstract class BaseHeadBarAppScene : BaseAppScene() {
     }
 
     /**
+     * 设置标题
+     */
+    protected abstract fun initHeadBar(headBar: HeadBar)
+
+    /**
      * 返回键的点击监听，如需实现特殊需求重写此方法即可
      */
     protected fun onToolbarBackClick(view: View?) {

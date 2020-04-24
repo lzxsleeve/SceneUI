@@ -1,4 +1,4 @@
-package com.sleeve.ui.base
+package com.sleeve.ui.config
 
 import com.bytedance.scene.animation.NavigationAnimationExecutor
 import com.bytedance.scene.animation.animatorexecutor.HorizontalTransitionAnimatorExecutor
