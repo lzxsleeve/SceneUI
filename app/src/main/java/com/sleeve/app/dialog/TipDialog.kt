@@ -21,7 +21,6 @@ class TipDialog : BaseDialogScene(), View.OnClickListener {
         view.dialog_title.text = "标题"
         view.dialog_cancel.setOnClickListener(this)
         view.dialog_ok.setOnClickListener(this)
-//        view.dialog_background.setOnClickListener{}
         arguments?.let {
             view.dialog_content.text = it.getString("content")
             if (!it.getBoolean("isDark")) {

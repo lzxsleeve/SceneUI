@@ -15,7 +15,8 @@ import com.bytedance.scene.ui.template.SwipeBackGroupScene
 
 /**
  * SwipeBackGroupScene 封装通用方法的基类, 默认可以右滑关闭
- * 注：软键盘适配会存在一些不方便使用的地方，比如adjustResize需要要搭配android:fitsSystemWindows使用，但是会增加一个状态栏高度的空白区域，这时推荐使用BaseHeadBarAppScene
+ * ps: 软键盘适配会存在一些不方便使用的地方，比如adjustResize需要要搭配android:fitsSystemWindows使用，但是会增加一个状态栏高度的空白区域，这时推荐使用BaseAppScene
+ * pss: 其实全部都使用BaseAppScene也没什么问题
  *
  * Create by lzx on 2020/4/21.
  */

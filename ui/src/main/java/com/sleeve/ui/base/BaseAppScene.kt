@@ -12,11 +12,10 @@ import com.bytedance.scene.animation.animatorexecutor.HorizontalTransitionAnimat
 import com.bytedance.scene.interfaces.PushOptions
 import com.bytedance.scene.interfaces.PushResultCallback
 import com.bytedance.scene.ui.template.AppCompatScene
-import com.sleeve.ui.view.HeadBar
 
 /**
  * AppCompatScene 封装通用方法的基类, 默认禁止右滑关闭
- * 注：非特殊情况，如软键盘适配问题时，推荐使用BaseScene
+ * ps: 非特殊情况，如软键盘适配问题时，推荐使用BaseScene
  *
  * Create by lzx on 2020/4/21.
  */

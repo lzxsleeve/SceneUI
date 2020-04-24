@@ -4,13 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.bytedance.scene.ui.template.SwipeBackGroupScene
 import com.sleeve.ui.R
 import kotlinx.android.synthetic.main.base_uif.view.*
 
 /**
  * 无头部的 Scene
- * @exception SwipeBackGroupScene
+ * @exception BaseScene
  *
  * Create by lzx on 2020/4/22.
  */

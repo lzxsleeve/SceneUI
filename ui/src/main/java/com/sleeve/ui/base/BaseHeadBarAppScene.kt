@@ -10,7 +10,7 @@ import com.sleeve.ui.view.HeadBar
 
 /**
  * 具有头部的 Scene
- * @exception AppCompatScene
+ * @exception BaseAppScene
  *
  * Create by lzx on 2020/4/21.
  */

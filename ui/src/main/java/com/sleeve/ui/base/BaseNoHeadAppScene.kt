@@ -9,7 +9,7 @@ import com.sleeve.ui.R
 
 /**
  * 无头部的 Scene
- * @exception AppCompatScene
+ * @exception BaseAppScene
  *
  * Create by lzx on 2020/4/21.
  */

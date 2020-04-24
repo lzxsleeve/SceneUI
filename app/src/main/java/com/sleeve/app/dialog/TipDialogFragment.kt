@@ -34,6 +34,12 @@ class TipDialogFragment : BaseDialogFragment() {
             dismiss()
             mListener?.onOk(it)
         }
+
+        dialog_background.setOnClickListener {
+            dismiss()
+        }
+
+        dialog_background.getChildAt(0).isClickable = true
     }
 
     fun showDialog(manager: FragmentManager) {

@@ -10,8 +10,8 @@ import com.sleeve.ui.view.HeadBar
 import kotlinx.android.synthetic.main.base_uif_toolbar.view.*
 
 /**
- * 具有头部的 Scene -- 可以右滑关闭
- * @exception SwipeBackGroupScene
+ * 具有头部的 Scene
+ * @exception BaseScene
  *
  * Create by Sleeve on 2020/1/14
  */
