@@ -12,6 +12,7 @@ import com.bytedance.scene.animation.animatorexecutor.HorizontalTransitionAnimat
 import com.bytedance.scene.interfaces.PushOptions
 import com.bytedance.scene.interfaces.PushResultCallback
 import com.bytedance.scene.ui.template.SwipeBackGroupScene
+import com.bytedance.scene.ui.view.StatusBarView
 
 /**
  * SwipeBackGroupScene 封装通用方法的基类, 默认可以右滑关闭
@@ -25,6 +26,7 @@ abstract class BaseScene : SwipeBackGroupScene() {
      * 显示内容的根布局
      */
     protected var mViewGroup: FrameLayout? = null
+    protected var mStatusBar: StatusBarView? = null
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)

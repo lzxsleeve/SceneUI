@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.bytedance.scene.navigation.OnBackPressedListener
+import com.sleeve.app.elementdemo.ElementDemoScene
 import com.sleeve.ui.base.BaseHeadBarAppScene
 import com.sleeve.ui.view.HeadBar
 import kotlinx.android.synthetic.main.scene_main.view.*
@@ -45,6 +46,8 @@ class MainScene : BaseHeadBarAppScene(), View.OnClickListener {
         view.home_btn2.setOnClickListener(this)
         view.home_btn3.setOnClickListener(this)
         view.home_btn4.setOnClickListener(this)
+        view.home_btn5.setOnClickListener(this)
+        view.home_btn6.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -64,6 +67,13 @@ class MainScene : BaseHeadBarAppScene(), View.OnClickListener {
             }
             R.id.home_btn4 -> {
                 start(DialogTestScene())
+            }
+            R.id.home_btn5 -> {
+                // ReuseGroupScene需要通过class跳转，否则不会存储
+                start(ReuseDemoScene::class.java)
+            }
+            R.id.home_btn6 -> {
+                start(ElementDemoScene())
             }
         }
     }

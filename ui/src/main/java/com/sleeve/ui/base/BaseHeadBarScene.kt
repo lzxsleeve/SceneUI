@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.bytedance.scene.ui.template.SwipeBackGroupScene
 import com.sleeve.ui.R
 import com.sleeve.ui.view.HeadBar
 import kotlinx.android.synthetic.main.base_uif_toolbar.view.*
@@ -33,7 +32,8 @@ abstract class BaseHeadBarScene : BaseScene() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         // 显示状态栏
-        view.status_bar_view.visibility = View.VISIBLE
+        mStatusBar = view.status_bar_view
+        mStatusBar!!.visibility = View.VISIBLE
     }
 
     /**

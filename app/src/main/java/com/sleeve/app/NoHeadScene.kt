@@ -15,7 +15,6 @@ class NoHeadScene : BaseNoHeadScene() {
     }
 
     override fun initView() {
-        setSwipeEnabled(true)
         view.main_text.text = "可以右滑关闭"
     }
 }
